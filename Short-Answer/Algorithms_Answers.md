@@ -3,10 +3,13 @@
 ## Exercise I
 
 a)
+O(1) 
+as n gets bigger the amount of time it takes to run the function stays constant. 
 
 
 b)
-
+O(n)
+as n gets bigger
 
 c)
 
