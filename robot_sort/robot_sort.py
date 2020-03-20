@@ -106,25 +106,25 @@ class SortingRobot:
                 # if the held card is greater, then swap cards and turn on the light
                 if self.compare_item() == 1:
                     self.swap_item()
-                    self.set_light_on
+                    self.set_light_on()
                 #Robot is now holding a smaller card so move left and swap_items with the empty space
                 self.move_left()
                 self.swap_item()
                 # Robot is now holding nothing so move_right to the next position and run again
-                self.move_right
+                self.move_right()
             # else if you cannot move right then move all the way to the left of the list to run this again until sorted
             else:
                 # if None in the list swap it out
-                if self.compare_item() is None:
+                if self.compare_item() == None:
                     self.swap_item()
                 #if the light is off, that means the light is sorted
-                if not self.light_is_on:
+                if not self.light_is_on():
                     break
                 # reset the light
                 self.set_light_off()
                 # move to the beginning of the list
                 while self.can_move_left() == True:
-                    self.move_left
+                    self.move_left()
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
@@ -142,7 +142,8 @@ Robot functionality
   - If it tries to pick up an item while already holding one, it will swap the items instead.
 - It can compare the item it's holding to the item in front of it.
 - It can switch a light on its head on or off.
-comparing items returns True if the item held is Larger and False if the item held is smaller
+
+we can use the light to check if the list is sorted while 
 
 Robot starts at 0 
     swap_items()
@@ -154,6 +155,7 @@ Robot starts at 0
         swap_items() swapped the item with an empty position now holding nothing
         move_right() and do it over again
     else if you cannot move_right: 
+        if you don't have anything 
 
     
 '''
